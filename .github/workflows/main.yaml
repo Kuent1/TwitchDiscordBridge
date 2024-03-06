@@ -24,10 +24,11 @@ jobs:
           distribution: "adopt"
           cache: maven
 
+      - name: Debug cd ls
+        run: cd app && ls -alh
+        
       - name: Test code
-        run: |
-          cd app
-          mvn test
+        run: mvn test
 
       - name: Build with Maven
         run: mvn clean install
