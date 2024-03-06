@@ -32,6 +32,33 @@ jobs:
           name: app
           path: app/target/TwitchDiscordBridge-*.jar
 
+  build-and-push-web-images:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [api, front]
+    steps:
+      - name: Lower
+        id: lowered
+        uses: profy12/lowercase-action@0.6
+        with:
+          text: ${{ github.repository_owner }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3.0.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5.1.0
+        with:
+          context: ./${{ matrix.service }}
+          file: ./${{ matrix.service }}/Dockerfile
+          push: true
+          tags: ghcr.io/${{ steps.lowered.outputs.text }}/twitch-discord-${{ matrix.service }}:latest
+
   build-and-push-app-image:
     runs-on: ubuntu-latest
     needs: build-app
