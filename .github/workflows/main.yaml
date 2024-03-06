@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          path: app/*
+          path: app
 
       - name: Debug ls
         run: ls -alh
