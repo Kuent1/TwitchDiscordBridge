@@ -4,9 +4,6 @@ on:
   push:
 
 jobs:
-  build-front:
-    runs-on: ubuntu-latest
-
   build-and-push-app-image:
     runs-on: ubuntu-latest
     steps:
