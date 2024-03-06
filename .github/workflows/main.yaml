@@ -18,14 +18,13 @@ jobs:
           java-version: "18"
           distribution: "adopt"
           cache: maven
-
-      - name: Debug cd
-        run: cd app 
         
       - name: Test code
+        working-directory: app
         run: mvn test
 
       - name: Build with Maven
+        working-directory: app
         run: mvn clean install
 
       - name: Upload build artifact
