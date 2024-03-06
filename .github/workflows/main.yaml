@@ -14,13 +14,13 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '18'
-          distribution: 'adopt'
+          java-version: "18"
+          distribution: "adopt"
           cache: maven
 
       - name: Test code
         run: mvn test
-      
+
       - name: Build with Maven
         run: mvn clean install
 
@@ -49,15 +49,15 @@ jobs:
       - name: Lower
         id: lowered
         uses: profy12/lowercase-action@0.6
-        with: 
+        with:
           text: ${{ github.repository_owner }}
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@3
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
