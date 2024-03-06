@@ -20,7 +20,7 @@ jobs:
 
       - name: Test code
         run: mvn test
-
+        
       - name: Build with Maven
         run: mvn clean install
 
@@ -69,3 +69,4 @@ jobs:
           tags: ghcr.io/${{ steps.lowered.outputs.text }}/twitch-discord-bridge:latest
           build-args: |
             JAR_FILE=target/TwitchDiscordBridge-*.jar
+
