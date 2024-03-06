@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: app
-          path: target/TwitchDiscordBridge-*.jar
+          path: app/target/TwitchDiscordBridge-*.jar
 
   build-and-push-image:
     runs-on: ubuntu-latest
