@@ -38,6 +38,9 @@ jobs:
       matrix:
         service: [api, front]
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
       - name: Lower
         id: lowered
         uses: profy12/lowercase-action@0.6
