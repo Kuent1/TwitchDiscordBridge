@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Twitch Discord</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Bridge Twitch Discord</h1>
+    </header>
+
+    <body>
+
+        <div id="markdown-content">
+            <!-- This div dynamically displays the latest README documentation from the remote Github repository -->
+        </div>
+        <!-- This script makes a call to the API to fetch the README documentation -->
+            <script>
+                document.addEventListener('DOMContentLoaded', async () => {
+                    const markdownContainer = document.getElementById('markdown-content');
+                    try {
+                        const response = await fetch('http://api:3000/markdown/');
+                        if (!response.ok) {
+                            throw new Error('Failed to fetch Markdown content');
+                        }
+                        const markdownContent = await response.text();
+                        markdownContainer.innerHTML = markdownContent;
+                    } catch (error) {
+                        console.error(error);
+                        markdownContainer.innerHTML = 'Failed to load Markdown content';
+                    }
+                });
+            </script>
+    </body>
+</body>
+
+</html>

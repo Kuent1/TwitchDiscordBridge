@@ -3,4 +3,6 @@
 .vscode
 *.iml
 bridge.properties
-.devcontainer/ssh-keys/*
+*/node_modules
+*/*.log
+app/*.jar

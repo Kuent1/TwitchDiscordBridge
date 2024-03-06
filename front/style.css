@@ -1,0 +1,95 @@
+/* Reset default margins and padding */
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Markdown content container */
+#markdown-content {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  padding: 20px;
+}
+
+/* Headings */
+#markdown-content h1,
+#markdown-content h2,
+#markdown-content h3,
+#markdown-content h4,
+#markdown-content h5,
+#markdown-content h6 {
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+#markdown-content h1 {
+  font-size: 2em;
+}
+
+#markdown-content h2 {
+  font-size: 1.5em;
+}
+
+#markdown-content h3 {
+  font-size: 1.25em;
+}
+
+/* Paragraphs and text */
+#markdown-content p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* Links */
+#markdown-content a {
+  color: #0366d6; /* GitHub's link color */
+}
+
+#markdown-content a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+#markdown-content ul,
+#markdown-content ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+/* Code blocks */
+#markdown-content pre {
+  background-color: #f6f8fa; /* GitHub's code block background color */
+  color: #333; /* GitHub's code block text color */
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+/* Inline code */
+#markdown-content code {
+  background-color: #f6f8fa; /* GitHub's code block background color */
+  padding: 0.2em 0.4em;
+  margin: 0;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+/* Blockquotes */
+#markdown-content blockquote {
+  margin: 0;
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 2px solid #dfe2e5; /* GitHub's blockquote border color */
+  color: #6a737d; /* GitHub's blockquote text color */
+}
+
+/* Horizontal rule */
+#markdown-content hr {
+  margin: 1em 0;
+  border: none;
+  border-top: 1px solid #dfe2e5; /* GitHub's horizontal rule color */
+}

@@ -1,0 +1,15 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "marked.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^12.0.0"
+  }
+}

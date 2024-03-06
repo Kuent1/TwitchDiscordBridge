@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api/python
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # Mount Docker socket to communicate with local Docker daemon
+    networks:
+      - mynetwork
+
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - mynetwork
+    depends_on:
+      - api
+
+networks:
+  mynetwork:
