@@ -6,3 +6,4 @@ bridge.properties
 */node_modules
 */*.log
 app/*.jar
+target
